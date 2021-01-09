@@ -4,7 +4,8 @@
 #include "sandbox.h"
 using namespace std;
 
-int main(){
+
+int main(int argc, char* argv[]){
     assert(1==1);
 
     cout << "testing split_char" << endl;
@@ -14,5 +15,11 @@ int main(){
 
     vector<regex> rules_pat {regex{"(sub)(.*)"}};
     get_construction("subject", rules_pat);
+    
+
+    string input_rule_path {argv[1]};
+    parse_input_rules(input_rule_path);
+
     cout << "all done." << endl;
+    return 0;
 }
